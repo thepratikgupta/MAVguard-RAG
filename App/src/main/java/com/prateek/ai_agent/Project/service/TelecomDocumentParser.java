@@ -14,10 +14,10 @@ import java.util.regex.Pattern;
 @Service
 public class TelecomDocumentParser {
 
-    public List<TelecomChunk> parse3gppPdf(File pdfFile, String docId) throws IOException {
+    public List<TelecomChunk> parse3gppPdf(InputStream inputStream, String docId) throws IOException {
         List<TelecomChunk> chunks = new ArrayList<>();
 
-        try (PDDocument document = PDDocument.load(pdfFile)) {
+        try (PDDocument document = PDDocument.load(inputStream)) {
             PDFTextStripper stripper = new PDFTextStripper();
 
             stripper.setStartPage(15);

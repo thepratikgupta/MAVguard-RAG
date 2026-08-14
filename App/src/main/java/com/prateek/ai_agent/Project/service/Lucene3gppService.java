@@ -32,7 +32,7 @@ public class Lucene3gppService {
 
     @Value("${rag.search.max-results:7}")
     private int hardMaxResults;
-    @Value("${rag.search.dynamic-threshold-multiplier:0.80}")
+    @Value("${rag.search.dynamic-threshold-multiplier:0.75}")
     private float dynamicThresholdMultiplier;
 
     public void indexChunks(List<TelecomChunk> chunks) {

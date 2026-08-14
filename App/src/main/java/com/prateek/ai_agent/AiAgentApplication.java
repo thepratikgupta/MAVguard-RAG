@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import com.prateek.ai_agent.Project.service.TelecomDocumentParser;
+import org.springframework.beans.factory.annotation.Value;
 import java.io.File;
 import java.io.InputStream;
 import java.util.List;

@@ -33,7 +33,7 @@ public class AiAgentApplication {
 
 			luceneService.indexChunks(chunks);
 
-			System.out.println("\n🔍 Running internal test query for: 'AMF Architecture'");
+			System.out.println("\nRunning internal test query for: 'AMF Architecture'");
 			List<TelecomSearchResult> testResults = luceneService.search("AMF Architecture", 3);
 
 			for (int i = 0; i < testResults.size(); i++) {
@@ -44,7 +44,7 @@ public class AiAgentApplication {
 			}
 			System.out.println("\nBackend RAG Engine is READY.");
 			} catch (Exception e) {
-                System.err.println("❌ Failed to parse PDF on startup: " + e.getMessage());
+                System.err.println("Failed to parse PDF on startup: " + e.getMessage());
             }
 		};
 	}

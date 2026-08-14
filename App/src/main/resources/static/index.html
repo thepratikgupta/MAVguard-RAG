@@ -223,7 +223,7 @@
             }
 
         } catch (error) {
-            addMessageToChat("Error connecting to the backend. Is Spring Boot running?", 'bot');
+            addMessageToChat("Error connecting to the backend. Check either Daily Token Quota is Exhaused or Spring Boot is not running?", 'bot');
         } finally {
             document.getElementById('sendBtn').disabled = false;
             document.getElementById('loadingIndicator').style.display = 'none';

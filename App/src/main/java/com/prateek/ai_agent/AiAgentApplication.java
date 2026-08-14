@@ -13,6 +13,7 @@ import org.springframework.core.io.ClassPathResource;
 import com.prateek.ai_agent.Project.service.TelecomDocumentParser;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 
 @SpringBootApplication
@@ -27,9 +28,12 @@ public class AiAgentApplication {
 		return args -> {
 			System.out.println("Booting Telecom RAG Engine...");
 
-			File pdfFile = new ClassPathResource("3gpp-specs/TS_23501.pdf").getFile();
+			//File pdfFile = new ClassPathResource("3gpp-specs/TS_23501.pdf").getFile();
+			ClassPathResource pdfResource = new ClassPathResource("3gpp-specs/TS_23501.pdf");
 
-			List<TelecomChunk> chunks = parser.parse3gppPdf(pdfFile, "TS 23.501");
+			try (InputStream inputStream = pdfResource.getInputStream()) {
+			// List<TelecomChunk> chunks = parser.parse3gppPdf(pdfFile, "TS 23.501");
+			List<TelecomChunk> chunks = parser.parse3gppPdf(inputStream, "TS 23.501");
 
 			luceneService.indexChunks(chunks);
 
@@ -42,7 +46,10 @@ public class AiAgentApplication {
 				System.out.println("Section: " + res.sectionNumber());
 				System.out.println("Snippet: " + res.content().substring(0, Math.min(100, res.content().length())) + "...");
 			}
-			System.out.println("\n✅ Backend RAG Engine is READY.");
+			System.out.println("\nBackend RAG Engine is READY.");
+			} catch (Exception e) {
+                System.err.println("❌ Failed to parse PDF on startup: " + e.getMessage());
+            }
 		};
 	}
 }

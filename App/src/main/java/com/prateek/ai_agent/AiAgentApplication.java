@@ -5,13 +5,10 @@ import com.prateek.ai_agent.Project.dto.TelecomSearchResult;
 import com.prateek.ai_agent.Project.service.Lucene3gppService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//import com.mavenir.telecom.parser.TelecomDocumentParser;
 import org.springframework.boot.CommandLineRunner;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import com.prateek.ai_agent.Project.service.TelecomDocumentParser;
-
 import java.io.File;
 import java.io.InputStream;
 import java.util.List;
@@ -28,11 +25,10 @@ public class AiAgentApplication {
 		return args -> {
 			System.out.println("Booting Telecom RAG Engine...");
 
-			//File pdfFile = new ClassPathResource("3gpp-specs/TS_23501.pdf").getFile();
 			ClassPathResource pdfResource = new ClassPathResource("3gpp-specs/TS_23501.pdf");
 
 			try (InputStream inputStream = pdfResource.getInputStream()) {
-			// List<TelecomChunk> chunks = parser.parse3gppPdf(pdfFile, "TS 23.501");
+
 			List<TelecomChunk> chunks = parser.parse3gppPdf(inputStream, "TS 23.501");
 
 			luceneService.indexChunks(chunks);

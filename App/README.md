@@ -11,7 +11,7 @@ An enterprise-grade Retrieval-Augmented Generation (RAG) application engineered 
 Built with a strict focus on **zero hallucinations**, this system utilizes a custom Apache Lucene BM25 indexing pipeline, dynamic scoring threshold guardrails, and deterministic LLM prompting to ensure outputs are strictly bound to 3GPP context.
 
 ### 🌐 Live Interactive Demo
-**Access the live deployment here:** [https://mavguard-rag.onrender.com](https://mavguard-rag.onrender.com)  
+**Access the live deployment here:** [https://mavguard-rag-2.onrender.com](https://mavguard-rag-2.onrender.com/)  
 *(Note: As this is hosted on a free cloud tier, the initial startup may take 30-50 seconds if the container is asleep).*
 
 ---

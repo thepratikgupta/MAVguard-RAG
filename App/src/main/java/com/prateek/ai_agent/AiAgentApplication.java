@@ -3,15 +3,19 @@ package com.prateek.ai_agent;
 import com.prateek.ai_agent.Project.dto.TelecomChunk;
 import com.prateek.ai_agent.Project.dto.TelecomSearchResult;
 import com.prateek.ai_agent.Project.service.Lucene3gppService;
+import com.prateek.ai_agent.Project.service.TelecomDocumentParser;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.ClassPathResource;
-import com.prateek.ai_agent.Project.service.TelecomDocumentParser;
-import org.springframework.beans.factory.annotation.Value;
-import java.io.File;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication

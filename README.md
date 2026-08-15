@@ -1,4 +1,4 @@
-# 📡 MAVguard-RAG: Zero-Hallucination Telecom Chatbot
+# MAVguard-RAG: Zero-Hallucination Telecom Chatbot
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=java)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.6-brightgreen?style=for-the-badge&logo=spring)

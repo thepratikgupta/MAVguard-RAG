@@ -14,6 +14,7 @@ Built with a strict focus on **zero hallucinations**, this system utilizes a cus
 **Access the live deployment here:** [https://mavguard-rag-2.onrender.com](https://mavguard-rag-2.onrender.com/)  
 *(Note: As this is hosted on a free cloud tier, the initial startup may take 30-50 seconds if the container is asleep).*
 
+<img width="1871" height="865" alt="image" src="https://github.com/user-attachments/assets/a093d972-392a-4634-be43-985824b973ef" />
 ---
 
 ## 🏗️ System Architecture

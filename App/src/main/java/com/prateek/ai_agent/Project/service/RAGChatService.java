@@ -18,7 +18,7 @@ public class RAGChatService {
     private final Lucene3gppService luceneService;
     private final OpenAIClient openAIClient;
 
-    private static final float RELEVANCE_THRESHOLD = 1.5f;
+    private static final float RELEVANCE_THRESHOLD = 0.5f;
 
     public RAGChatService(Lucene3gppService luceneService,
                           @Value("${openai.api.key}") String apiKey,
@@ -69,7 +69,7 @@ public class RAGChatService {
                 .build();
 
         ChatCompletionCreateParams params = ChatCompletionCreateParams.builder()
-                .model("nvidia/nemotron-3-ultra-550b-a55b:free")
+                .model("nvidia/nemotron-3.5-lightning:free")
                 .temperature(0.0)
                 .addMessage(ChatCompletionMessageParam.ofSystem(paramsOne))
                 .addMessage(ChatCompletionMessageParam.ofUser(paramsTwo))

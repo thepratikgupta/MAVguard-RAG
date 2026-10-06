@@ -70,7 +70,7 @@ public class RAGChatService {
 
         ChatCompletionCreateParams params = ChatCompletionCreateParams.builder()
                 .model("nvidia/nemotron-3.5-lightning:free")
-                .temperature(0.0)
+                .temperature(0.2)
                 .addMessage(ChatCompletionMessageParam.ofSystem(paramsOne))
                 .addMessage(ChatCompletionMessageParam.ofUser(paramsTwo))
                 .build();
